@@ -1,0 +1,36 @@
+{% extends 'test_bilet/base.html' %}
+{% block content %}
+    <header>
+        <nav>
+
+              <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+
+
+        </nav>
+    </header>
+
+
+
+
+            <main>
+        <div class="box">
+                <h1>Выбор факультета</h1>
+            <div class="box_content">
+        {% for facultet in facultets %}
+
+                <a href="{{ facultet.get_absolute_url }}">
+                    {{ facultet.name }}
+                </a>
+
+        {% endfor %}
+
+        </div>
+    </main>
+<!--            <h2>-->
+<!--        <a href="{{ courses.get_absolute_url }}">-->
+<!--            Назад-->
+<!--        </a>-->
+<!--    </h2>-->
+<!--    </div>-->
+
+{% endblock %}

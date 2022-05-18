@@ -1,0 +1,37 @@
+{% extends 'test_bilet/base.html' %}
+{% block content %}
+
+    <header>
+        <nav>
+
+              <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+  <a class="nav-link active" aria-current="page" href="{% url 'start' %}">Факультеты</a>
+  <a class="nav-link active" aria-current="page" href="{{ facultet.get_absolute_url }}">Специальности</a>
+  <a class="nav-link active" aria-current="page" href="{{ specialnost.get_absolute_url }}">Предметы</a>
+
+        </nav>
+
+
+
+    </header>
+
+
+
+
+
+        <main>
+    <div class="box">
+        <h1>Выбор темы</h1>
+        <div class="box_content">
+        {% for tema in tems %}
+
+                <a href="{{ tema.get_absolute_url }}">
+                    {{ tema.name }}
+                </a>
+
+        {% endfor %}
+
+        </div>
+</main>
+
+{% endblock %}

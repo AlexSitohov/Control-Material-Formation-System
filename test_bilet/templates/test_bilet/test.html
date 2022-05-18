@@ -1,0 +1,90 @@
+{% extends 'test_bilet/base.html' %}
+
+
+{% block content %}
+
+<header>
+    <nav>
+
+
+        <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'start' %}">Факультеты</a>
+        <a class="nav-link active" aria-current="page" href="{{ facultet.get_absolute_url }}">Специальности</a>
+        <a class="nav-link active" aria-current="page" href="{{ specialnost.get_absolute_url }}">Предметы</a>
+        <a class="nav-link active" aria-current="page" href="{{ predmet.get_absolute_url }}">Темы</a>
+        <a class="nav-link active" aria-current="page" href="{{ tema.get_absolute_url }}">Формирование билетов</a>
+
+
+    </nav>
+
+
+</header>
+
+
+<!--<div class="lvls">-->
+<!--    <form action="{{ tema.get_absolute_url }}" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        {{form.as_p}}-->
+<!--        <button type='submit'>Выполнить</button>-->
+
+<!--    </form>-->
+<!--</div>-->
+{% for key, bilet in data_question.items %}
+
+
+<div class="table_box">
+    <table>
+        <caption>
+            <span class="table_hader">Северo осетинский государственный универститет</span>
+            <br>
+            Факультет
+            <span class="lesson table_underline">{{facultet.name}}</span>
+        </caption>
+        <tr>
+            <th class="dis" colspan="2">Дисциплина</th>
+            <th class="otd">Отделение</th>
+            <th class="kur">Курс</th>
+            <th class="sem">Семестр</th>
+        </tr>
+        <tr>
+            <td class="table_underline" colspan="2">{{predmet.name}}</td>
+            <td>дневное</td>
+            <td class="table_underline">{{predmet.kurs}}</td>
+            <td class="table_underline">{{predmet.semestr}}</td>
+        </tr>
+        <tr class="big_line">
+            <td colspan="5">
+                Билет №<span class="table_underline">{{key}}</span>
+            </td>
+        </tr>
+        <tr>
+
+
+                {% for key, value in bilet.items %}
+
+            <td class="table_number">{{key}}</td>
+            <td class="question" colspan="4">{{value}}</td>
+
+        </tr>
+
+            {% endfor %}
+
+
+
+        <tr class="border_dotted">
+            <td class="instructor" colspan="3">Преподователь</td>
+            <td colspan="2">___</td>
+        </tr>
+        <tr class="border_dotted">
+            <td class="manager instructor" colspan="3">Заведущий кафедрой</td>
+            <td colspan="2">___</td>
+        </tr>
+    </table>
+</div>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

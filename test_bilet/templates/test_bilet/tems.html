@@ -1,0 +1,95 @@
+{% extends 'test_bilet/base.html' %}
+
+
+{% block content %}
+
+<header>
+    <nav>
+
+
+        <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'start' %}">Факультеты</a>
+        <a class="nav-link active" aria-current="page" href="{{ facultet.get_absolute_url }}">Специальности</a>
+        <a class="nav-link active" aria-current="page" href="{{ specialnost.get_absolute_url }}">Предметы</a>
+        <a class="nav-link active" aria-current="page" href="{{ predmet.get_absolute_url }}">Темы</a>
+
+
+    </nav>
+
+
+</header>
+
+
+<div class="lvls">
+
+    <form action="{{ tema.get_absolute_url }}" method="post">
+        {% csrf_token %}
+        <p><label class="form-label" for="{{form.title.id_for_label}}">{{form.title.label}}</label>{{form.title}}</p>
+        <div class='form-error'>{{form.title.errors}}</div>
+
+        {% for f in form %}
+        <p><label class="form-label" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}</p>
+        <div class='form-error'>{{f.errors}}</div>
+        {% endfor %}
+
+
+            <button type='submit' class="button21">Начать</button>
+
+
+
+    </form>
+</div>
+{% for item in some_list_3 %}
+
+<div class="table">
+    <div class="flex_element_1">
+        <p>
+                    <span class="up">
+                    северо - осетинсикий  государственный университет<br>
+                    </span>
+            <span class="default">Факультет</span>
+            <span class="underline">{{ facultet }}</span>
+        </p>
+    </div>
+    <div class="flex_element_2">
+        <div class="dis">дисциплина</div>
+        <div class="otdel">отделение</div>
+        <div class="curs">курс</div>
+        <div class="sem">семестр</div>
+        <div class="dis_under">{{predmet.name}}</div>
+        <div class="otdel_under">Дневное</div>
+        <div class="curs_under">{{predmet.kurs}}</div>
+        <div class="sem_under">{{predmet.semestr}}</div>
+        <div class="bilet">Билет &#8470; {{item}}</div>
+
+    </div>
+    <div class="flex_element_3">
+
+        {% for item in some_list_2 %}
+        <div class="vopros_box">
+            <div class="number">1</div>
+            <div class="vopros">
+
+                {{ item }}
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endfor %}
+
+
+<div>
+
+
+</div>
+
+
+<!--$("div.lvls").toggle(500,swing);-->
+<!--<script src="jquery.js"> </script>-->
+
+
+{% endblock %}

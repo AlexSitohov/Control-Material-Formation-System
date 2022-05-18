@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <link rel="stylesheet" href="{% static 'test_bilet/css/style.css'%}">
+
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'add_new_vopros' %}">Добавить новый вопрос</a>
+
+
+        </nav>
+
+
+    </header>
+
+
+
+
+</body>
+</html>
