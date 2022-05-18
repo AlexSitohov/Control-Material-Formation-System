@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.contrib.admin import (
     ModelAdmin,
     register, TabularInline,
@@ -47,3 +48,7 @@ class VoprosModelAdmin(ModelAdmin):
     inlines = (
         OtvetTabularInline,
     )
+
+
+admin.site.site_title = 'Формирование билетов'
+admin.site.site_header = 'Администрирование сайта'

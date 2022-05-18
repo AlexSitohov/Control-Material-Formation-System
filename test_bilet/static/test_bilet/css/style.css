@@ -331,7 +331,7 @@ td {
   border: 1px solid rgba(0,0,0,.4);
   border-top-color: rgba(0,0,0,.3);
   border-radius: 2px;
-  background: linear-gradient(rgb(255,255,255), rgb(240,240,240));
+  background: linear-gradient(#ffffff, rgb(240,240,240));
   box-shadow:
    0 0 3px rgba(0,0,0,0) inset,
    0 1px 1px 1px rgba(255,255,255,.2),
