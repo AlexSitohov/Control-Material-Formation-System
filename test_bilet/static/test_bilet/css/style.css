@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+a{
+color:black;
+}
 
 header{
     width: 100%;
@@ -20,17 +23,15 @@ nav{
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-
-    border: 2px solid black;
+    background-color:rgba(65, 118, 144, 0.25);
+    border: 2px solid #417690;
+    font-size: 20px;
 }
 
 header a{
-    margin-right: 30px;
-    font-size: 20px;
-    font-weight: bold;
+    margin-right: 100px;
+    font-size: 23px;
     text-decoration: none;
-    text-transform: uppercase;
-    color: #6d6d6d;
 }
 
 header a:hover{
@@ -59,7 +60,8 @@ main{
     padding: 10px;
     min-height: 300px;
     margin: 0 auto 50px auto;
-    border: 2px solid black;
+     background-color:rgba(65, 118, 144, 0.25);
+    border: 2px solid #417690;
 }
 
 .box h2{
@@ -80,20 +82,22 @@ main{
 
     height: auto;
     min-height: 250px;
-    border: 2px solid black;
+    border: 2px solid #417690;
 }
 
 .box_content a{
     font-size: 30px;
     text-decoration: none;
-    color: #6d6d6d;
 }
 
 .lvls{
-    width: 200px;
+    width: 500px;
     margin: 20px auto;
     display: block;
 
+}
+.form-control{
+        width:50px;
 }
 
 .table{
@@ -181,6 +185,13 @@ main{
     grid-row: 3/4;
     border: 1px solid black;
 }
+.form-label{
+font-size:20px;
+margin:0px 5px 0px 0px;
+}
+.lvls p{
+margin-bottom:10px;
+}
 
 .bilet_line{
     display: inline-block;
@@ -223,7 +234,8 @@ main{
     width: 1000px;
     margin: 20px auto;
 
-    border: 2px solid black;
+    border: 2px solid #417690;
+    background-color: rgba(65, 118, 144, 0.10);
 }
 
 table {

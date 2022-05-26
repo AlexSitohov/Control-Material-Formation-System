@@ -1,40 +1,46 @@
 {% load static %}
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
-        <link rel="stylesheet" href="{% static 'test_bilet/css/style.css'%}">
+<!DOCTYPE html>
+<html lang="ru">
 
-        <title>Главная страница</title>
-    </head>
-    <body>
-    <!--<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">-->
-<!--      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">-->
-<!--        <span class="fs-4" >Главная страница</span>-->
-<!--      </a>-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_col.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+    <title>Document</title>
+</head>
 
-<!--      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">-->
-<!--        <a class="me-3 py-2 text-dark text-decoration-none" href="test">Тест</a>-->
-<!--      </nav>-->
-<!--    </div>-->
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="menu">
+                    <div class="header__logo">
+                        <a href=""> <img src="{% static 'img/img_122908.png' %}" alt="" width="60%" height="auto"> </a>
+                    </div>
+                    <div class="title">
+                        <div class="header__title"> Факультет математики и информационных технологий </div>
+                        <div class="header__sub-title">Система формирование контрольных материалов</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="content__container container">
+                <div class="columns">
+                    <div class="columns__item"> <a href="/" class="columns__link">
+                        Главная страница
+                    </a> </div>
+                    <div class="columns__item"> <a href="test" class="columns__link">
+                        Формирование заданий (билетов)
+                    </a> </div>
+                    <div class="columns__item"> <a href="admin" class="columns__link">
+                        Редактировать данные
+                    </a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-    <header>
-        <nav>
-            <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
-            <a class="nav-link" href="test">Формирования заданий (билетов)</a>
-            <a class="nav-link" href="admin">Редактировать данные</a>
-
-        </nav>
-
-
-
-    </header>
-
-
-
-    </body>
-    </html>
+</html>
