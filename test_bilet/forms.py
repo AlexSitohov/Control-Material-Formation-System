@@ -3,7 +3,7 @@ from .models import *
 
 
 class ViborVoprosov(forms.Form):
-    count = forms.IntegerField(max_value=30, min_value=1, label="Количество билетов",
+    count = forms.IntegerField(max_value=40, min_value=1, label="Количество билетов в тесте",
                                widget=forms.NumberInput(attrs={'type': 'number',
                                                                'value': "",
                                                                'style': 'font-size: x-large',

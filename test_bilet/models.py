@@ -1,3 +1,5 @@
+import uuid
+
 from django.db.models import (
     Model,
     PROTECT,
@@ -8,7 +10,7 @@ from django.db.models import (
     SlugField,
     ForeignKey,
     BooleanField,
-    PositiveSmallIntegerField,
+    PositiveSmallIntegerField, UUIDField,
 )
 from django.urls import reverse
 
@@ -157,7 +159,7 @@ class Tema(Model):
     )
 
     def __str__(self):
-        return f'Тема: {self.name}. Предмет: {self.predmet.name}'
+        return self.name
 
     class Meta:
         db_table = 'tema'
@@ -216,6 +218,7 @@ class Otvet(Model):
     otvet = CharField(
         'ответ',
         max_length=150,
+        blank=True,
     )
     is_correct = BooleanField(
         'правильный ответ',
