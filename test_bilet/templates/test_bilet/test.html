@@ -1,9 +1,25 @@
 {% extends 'test_bilet/base.html' %}
 
+{% block css %}
+<style>
+    @media print{
+        body{
+            visibility:hidden;
+        }
+        .print {
+            visibility:visible;
+        }
+    }
+</style>
+{% endblock %}
+
 
 {% block content %}
 
+
 <header>
+
+
     <nav>
 
 
@@ -29,10 +45,12 @@
 
 <!--    </form>-->
 <!--</div>-->
+<button onclick="myFunction()" class="button21"><span aria-hidden="true"></span> Print</button>
+
 {% for key, bilet in data_question.items %}
 
 
-<div class="table_box">
+<div class="table_box print">
     <table>
         <caption>
             <span class="table_hader">Северo осетинский государственный универститет</span>
@@ -51,6 +69,7 @@
             <td>дневное</td>
             <td class="table_underline">{{predmet.kurs}}</td>
             <td class="table_underline">{{predmet.semestr}}</td>
+
         </tr>
         <tr class="big_line">
             <td colspan="5">
@@ -60,15 +79,19 @@
         <tr>
 
 
-                {% for key, value in bilet.items %}
+            {% for key, value in bilet.items %}
 
             <td class="table_number">{{key}}</td>
-            <td class="question" colspan="4">{{value}}-----------{{value.level}}</td>
+            <td class="question" colspan="3">{{value}}</td>
+            {% if value.ball == 1 %}
+            <td class="table_number">{{value.ball}} балл</td>
+            {% else %}
+            <td class="table_number">{{value.ball}} балла</td>
+            {% endif %}
 
         </tr>
 
-            {% endfor %}
-
+        {% endfor %}
 
 
         <tr class="border_dotted">
@@ -85,6 +108,17 @@
 {% endfor %}
 
 
+<script type="text/javascript">
+    function myFunction() {
+    var body = $('body').html,
+        el = $('.print');
+    $('body').html(el);
+    window.print();
+    $('body').html(body);
+}
 
+
+
+</script>
 
 {% endblock %}

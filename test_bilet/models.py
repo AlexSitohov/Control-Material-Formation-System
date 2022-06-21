@@ -203,7 +203,7 @@ class Vopros(Model):
     )
 
     def __str__(self):
-        return self.full_text[:50]
+        return self.full_text
 
     def __repr__(self):
         return self.full_text
