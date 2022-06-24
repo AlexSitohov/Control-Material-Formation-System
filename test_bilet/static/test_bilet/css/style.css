@@ -233,7 +233,7 @@ margin-bottom:10px;
     justify-content: center;
     align-items: center;
     width: 1000px;
-    margin: 20px auto;
+    margin: 10px auto;
 
     border: 2px solid #417690;
     background-color: rgba(65, 118, 144, 0.10);
@@ -301,12 +301,14 @@ td {
 }
 
 .table_number {
-    width: 60px;
-    text-align: start;
+    margin:  10px;
+    width: 30px;
+    text-align: start end;
 }
 
 .question {
-    text-align: start;
+    margin:  10px;
+    text-align: left 10%;
     word-wrap:break-word;
 }
 
